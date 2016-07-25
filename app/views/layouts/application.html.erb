@@ -16,58 +16,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">History of The Universe</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><form><a href="#" class="btn btn-success navbar-btn btn-sm" data-toggle="modal" data-target="#new-question-modal">Ask Question</a></form></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<%= render 'home/navbar'  %>
 
 <%= yield %>
-<div class="modal fade" id="new-question-modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">New Question</h4>
-      </div>
-      <%= form_for :question, url: '/questions', html: { class: 'form-horizontal' } do %>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputQuestion" class="col-sm-2 control-label">Question</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" name="question_body" id="inputQuestion" placeholder="What would you like to know" required></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+
+<%= render 'home/new_question_form' %>
 
 </body>
 </html>
