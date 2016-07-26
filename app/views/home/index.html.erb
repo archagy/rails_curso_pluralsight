@@ -4,28 +4,30 @@
 </div>
 
 <div class="container">
-	<% @question.each do |q| %>
-	<div class="media">
-		<div class="media-left">
-			<a href="#">
-				<img class="media-object" src=" <%= q.gravatar  %>">
-			</a>
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading"> <%= q.email  %> asked:</h4>
-				<%= time_ago_in_words q.created_at  %> ago <br>
+	<div class="boxes">
+		<% @question.each do |q| %>
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img class="media-object" src=" <%= q.gravatar  %>">
+				</a>
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading"> <%= q.email  %> asked:</h4>
+				<div class="time">	<%= time_ago_in_words q.created_at  %> ago 
+				</div>
 				<%= q.body  %>
-			<div>
-				<a href="<%= question_path(q)  %>" class="btn btn-success btn-xs">View Answers</a>
+				<div>
+					<a href="<%= question_path(q)  %>" class="btn btn-success btn-xs">View Answers</a>
+				</div>
 			</div>
 		</div>
-
-	</div>
 	<% end %>
+	</div>
 	<% if @question.empty? %>
-		<div class="alert alert-info">
-			No Questions
-		</div>
+	<div class="alert alert-info">
+		No Questions
+	</div>
 	<% end %>
 </div>
 
