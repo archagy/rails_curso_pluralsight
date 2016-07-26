@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="boxes">
 		<% @question.each do |q| %>
-		<div class="media">
+		<div class="media" data-target="<%= question_path(q)  %>" >
 			<div class="media-left">
 				<a href="#">
 					<img class="media-object" src=" <%= q.gravatar  %>">
@@ -14,10 +14,10 @@
 			</div>
 			<div class="media-body">
 				<h4 class="media-heading"> <%= q.email  %> asked:</h4>
-				<div class="time">	<%= time_ago_in_words q.created_at  %> ago 
+				<div class="time hidden-xs ">	<%= time_ago_in_words q.created_at  %> ago 
 				</div>
-				<%= q.body  %>
-				<div>
+				<%= truncate q.body, length: 300  %>
+				<div class="hidden-xs ">
 					<a href="<%= question_path(q)  %>" class="btn btn-success btn-xs">View Answers</a>
 				</div>
 			</div>

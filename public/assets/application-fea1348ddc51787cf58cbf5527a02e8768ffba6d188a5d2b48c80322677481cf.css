@@ -1,0 +1,40 @@
+/* line 8, /home/alex/dev/ruby course/rails/HU/app/assets/stylesheets/home.scss */
+.boxes .media {
+  border: thin solid #ddd;
+  border-radius: 10px;
+  background-color: #eeee;
+  position: relative;
+}
+/* line 14, /home/alex/dev/ruby course/rails/HU/app/assets/stylesheets/home.scss */
+.boxes .media .time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 21, /home/alex/dev/ruby course/rails/HU/app/assets/stylesheets/home.scss */
+.boxes .media a.btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+/* line 27, /home/alex/dev/ruby course/rails/HU/app/assets/stylesheets/home.scss */
+.boxes .media:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
