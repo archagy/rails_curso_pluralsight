@@ -1,11 +1,9 @@
 class AnswersController < ApplicationController
-	include SuckerPunch::Job
-	
 	def create
 		question = Question.find(params[:answer][:question_id])
 		answer = question.answers.create(answer_params)
 
-		MainMailer.notify_question_author(answer).deliver_later
+		SendEmailJob.new.perform(answer)
 		session[:current_user_email] = answer_params[:email]
 		redirect_to question
 	end
